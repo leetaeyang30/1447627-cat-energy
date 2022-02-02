@@ -1,6 +1,6 @@
 # Личный проект «Cat Energy»
 
-* Студент: [{{userName}}]({{userProfile}}).
+* Студент: [Русик](https://up.htmlacademy.ru/htmlcss/31/user/1447627).
 * Наставник: `Неизвестно`.
 
 ---
