@@ -1,7 +1,7 @@
 # Личный проект «Cat Energy»
 
-* Студент: [Русик](https://up.htmlacademy.ru/htmlcss/31/user/1447627).
-* Наставник: `Неизвестно`.
+* Студент: [Русик](https://htmlacademy.ru/profile/id1447627).
+* Наставник: [Алёна Поленникова](https://htmlacademy.ru/profile/id1397249).
 
 ---
 
