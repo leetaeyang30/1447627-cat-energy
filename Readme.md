@@ -1,7 +1,7 @@
 # Личный проект «Cat Energy»
 
-* Студент: [{{userName}}]({{userProfile}}).
-* Наставник: `Неизвестно`.
+* Студент: [Русик](https://htmlacademy.ru/profile/id1447627).
+* Наставник: [Алёна Поленникова](https://htmlacademy.ru/profile/id1397249).
 
 ---
 
