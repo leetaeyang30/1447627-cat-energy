@@ -1,0 +1,49 @@
+.burger {
+  position: relative;
+  box-sizing: border-box;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    right: 0;
+    left: 0;
+    height: 2px;
+    background-color: $text-accent-color;
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  &--open {
+    border-top: 2px solid $text-accent-color;
+    border-bottom: 2px solid $text-accent-color;
+  }
+
+  &--close {
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - 1px);
+      right: 0;
+      left: 0;
+      height: 2px;
+      background-color: $text-accent-color;
+      transform: rotate(45deg);
+    }
+  }
+}

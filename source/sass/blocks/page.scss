@@ -1,0 +1,12 @@
+.page__body {
+  display: grid;
+  min-width: 320px;
+  min-height: 100vh;
+  grid-template-rows: min-content 1fr min-content;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: $text-color;
+  background-color: $background-primary-color;
+}

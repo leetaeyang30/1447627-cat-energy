@@ -1,0 +1,49 @@
+.features__title {
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+  color: $text-accent-color;
+}
+
+.features__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.features__item {
+  &::before {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: $special-color;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.features__item--utility {
+  &::before {
+    background-image: url("../img/leaf.svg");
+  }
+}
+
+.features__item--release-form {
+  &::before {
+    background-image: url("../img/powder.svg");
+  }
+}
+
+.features__item--instruction {
+  &::before {
+    background-image: url("../img/cutlery.svg");
+  }
+}
+
+.features__item--waiting {
+  &::before {
+    background-image: url("../img/clock.svg");
+  }
+}

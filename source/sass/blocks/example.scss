@@ -1,0 +1,55 @@
+.example {
+  background-color: $background-secondary-color;
+}
+
+.example__title {
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 400;
+  color: $text-accent-color;
+}
+
+.example__list {
+  margin: 0;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $text-accent-color;
+}
+
+.example__key {
+  display: inline-block;
+}
+
+.example__value {
+  display: inline-block;
+  margin: 0;
+}
+
+.example__item--accent {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+
+  .example__key {
+    width: 70%;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: lowercase;
+    color: $text-color;
+    background-color: $background-secondary-color;
+    transform: translateY(-10px);
+  }
+
+  .example__value {
+    border: 1px solid $field-border-color;
+    padding: 14px 21px 18px;
+    border-radius: 3px;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}
