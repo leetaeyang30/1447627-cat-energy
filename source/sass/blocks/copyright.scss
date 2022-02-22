@@ -1,0 +1,26 @@
+.copyright__link {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  text-decoration: none;
+  color: inherit;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__name-part {
+  text-transform: uppercase;
+}
+
+.copyright__logo {
+  fill: $text-color;
+}
+
+.copyright__link:hover,
+.copyright__link:active {
+  .copyright__logo {
+    fill: $special-color;
+  }
+}

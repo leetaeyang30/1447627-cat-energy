@@ -1,0 +1,36 @@
+.socials__list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.socials__link {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: $social-icon-color;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  &--vk {
+    mask-image: url("../img/vk-icon.svg");
+  }
+
+  &--instagram {
+    mask-image: url("../img/instagram-icon.svg");
+  }
+
+  &--facebook {
+    mask-image: url("../img/facebook-icon.svg");
+  }
+
+  &:hover {
+    background-color: $special-color;
+  }
+
+  &:active {
+    background-color: $special-color;
+    opacity: 0.3;
+  }
+}
