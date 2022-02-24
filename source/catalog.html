@@ -17,7 +17,7 @@
           <img src="img/logo-icon-mini.svg" width="35" height="38" alt="Нарисованный белый кот в красной маске.">
           <img src="img/logo-text.svg" width="102" height="19" alt="Текст: CAT ENERGY.">
         </a>
-        <button class="main-navigation__toggle" type="button">
+        <button class="main-navigation__toggle burger burger--close" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <ul class="site-navigation">
@@ -39,12 +39,14 @@
         <h2 class="visually-hidden">Основные товары</h2>
         <table class="main-catalog-section__table main-catalog">
           <thead class="visually-hidden">
-            <th scope="col">Наименование</th>
-            <th scope="col">Фото</th>
-            <th scope="col">Масса</th>
-            <th scope="col">Вкус</th>
-            <th scope="col">Цена</th>
-            <th scope="col">Действие</th>
+            <tr>
+              <th scope="col">Наименование</th>
+              <th scope="col">Фото</th>
+              <th scope="col">Масса</th>
+              <th scope="col">Вкус</th>
+              <th scope="col">Цена</th>
+              <th scope="col">Действие</th>
+            </tr>
           </thead>
           <tbody class="main-catalog__list">
             <tr class="main-catalog__item">
@@ -59,7 +61,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 500&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Курица
               </td>
               <td class="main-catalog__item-text">
@@ -81,7 +83,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 1000&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Курица
               </td>
               <td class="main-catalog__item-text">
@@ -103,7 +105,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 500&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Рыба
               </td>
               <td class="main-catalog__item-text">
@@ -125,7 +127,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 1000&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Рыба
               </td>
               <td class="main-catalog__item-text">
@@ -147,7 +149,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 500&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Гречка
               </td>
               <td class="main-catalog__item-text">
@@ -169,7 +171,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 1000&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Гречка
               </td>
               <td class="main-catalog__item-text">
@@ -191,7 +193,7 @@
               <td class="main-catalog__item-text">
                 <span aria-hidden="true">Масса</span> 500&nbsp;г<span class="visually-hidden">рамм</span>
               </td>
-              <td class="cmain-catalog__item-text">
+              <td class="main-catalog__item-text">
                 <span aria-hidden="true">Вкус</span> Рис
               </td>
               <td class="main-catalog__item-text">
@@ -215,10 +217,12 @@
         <h2>Дополнительные товары</h2>
         <table class="additional-catalog-section__table additional-catalog">
           <thead class="visually-hidden">
-            <th scope="col">Наименование</th>
-            <th scope="col">Масса/Объём</th>
-            <th scope="col">Цена</th>
-            <th scope="col">Действие</th>
+            <tr>
+              <th scope="col">Наименование</th>
+              <th scope="col">Масса/Объём</th>
+              <th scope="col">Цена</th>
+              <th scope="col">Действие</th>
+            </tr>
           </thead>
           <tbody class="additional-catalog__list">
             <tr class="additional-catalog__item">
@@ -285,8 +289,8 @@
     <footer class="page__footer page-footer">
       <div class="page-footer__location">
         <div>
-          <p>Приглашаем к сотрудничеству дилеров!</p>
-          <address>
+          <p class="page-footer__text">Приглашаем к сотрудничеству дилеров!</p>
+          <address class="page-footer__address">
             <span>Санкт-Петербург</span> ул.&nbsp;Большая Конюшенная, д.&nbsp;19/8
           </address>
         </div>

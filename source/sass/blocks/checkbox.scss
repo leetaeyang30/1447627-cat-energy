@@ -1,0 +1,39 @@
+.checkbox__label {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: 30px;
+  grid-template-areas: "checkbox label";
+  align-items: center;
+
+  &::before {
+    content: "";
+    grid-area: checkbox;
+    place-self: stretch;
+    border: 1px solid $field-border-color;
+  }
+}
+
+.checkbox__input {
+  &:enabled {
+    + .checkbox__label:hover::before {
+      border-color: $field-border-hover-color;
+    }
+  }
+
+  &:checked {
+    + .checkbox__label::after {
+      content: "";
+      grid-area: checkbox;
+      place-self: center;
+      width: 18px;
+      height: 14px;
+      background-image: url("../img/checked.svg");
+    }
+  }
+
+  &:disabled {
+    + .checkbox__label {
+      opacity: 0.3;
+    }
+  }
+}

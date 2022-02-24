@@ -1,0 +1,41 @@
+.radio-button__label {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-template-rows: 30px;
+  grid-template-areas: "radio label";
+  align-items: center;
+
+  &::before {
+    content: "";
+    grid-area: radio;
+    place-self: stretch;
+    border: 1px solid $field-border-color;
+    border-radius: 50%;
+  }
+}
+
+.radio-button__input {
+  &:enabled:not(:checked) {
+    + .radio-button__label:hover::before {
+      border-color: $field-border-hover-color;
+    }
+  }
+
+  &:checked {
+    + .radio-button__label::after {
+      content: "";
+      grid-area: radio;
+      place-self: center;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background-color: $special-color;
+    }
+  }
+
+  &:disabled {
+    + .radio-button__label {
+      opacity: 0.3;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.questionnaire {
+  font-family: "Oswald", "Arial", sans-serif;
+}
+
+.questionnaire__title {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 400;
+  color: $text-accent-color;
+}
+
+.questionnaire__text {
+  text-transform: uppercase;
+  color: $text-accent-color;
+}

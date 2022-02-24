@@ -1,0 +1,26 @@
+.questionnaire-form {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.questionnaire-form__section {
+  border: none;
+}
+
+.questionnaire-form__section-title {
+  font-size: 24px;
+  line-height: 26px;
+  color: $text-accent-color;
+}
+
+.questionnaire-form__field {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.questionnaire-form__small {
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+}
