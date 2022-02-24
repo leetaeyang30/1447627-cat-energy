@@ -17,5 +17,20 @@
 
   &:active {
     color: fade-out($background-primary-color, 0.7);
+    background-color: $button-hover-color;
+  }
+
+  &--simple {
+    color: $text-color;
+    background-color: $background-secondary-color;
+
+    &:hover {
+      background-color: darken($background-secondary-color, 3.5%);
+    }
+
+    &:active {
+      color: fade-out($text-color, 0.7);
+      background-color: darken($background-secondary-color, 3.5%);
+    }
   }
 }
