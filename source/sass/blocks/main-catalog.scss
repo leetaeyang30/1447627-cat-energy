@@ -1,0 +1,37 @@
+.main-catalog__item-link,
+.main-catalog__show-more-title {
+  font-family: "Oswald", "Aria", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $catalog-item-title-color;
+}
+
+.main-catalog__item-link {
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.main-catalog__item-text,
+.main-catalog__show-more-text {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.main-catalog__show-more {
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-image: linear-gradient(to right, transparent calc(50% - 1px), $field-border-hover-color calc(50% - 1px), $field-border-hover-color calc(50% + 1px), transparent calc(50% + 1px)),
+      linear-gradient(to bottom, transparent calc(50% - 1px), $field-border-hover-color calc(50% - 1px), $field-border-hover-color calc(50% + 1px), transparent calc(50% + 1px));
+  }
+}
