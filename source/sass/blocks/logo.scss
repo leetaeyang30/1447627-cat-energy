@@ -1,9 +1,29 @@
 .logo {
-  &:hover {
+  display: block;
+
+  &[href]:hover {
     opacity: 0.8;
   }
 
-  &:active {
+  &[href]:active {
     opacity: 0.6;
+  }
+}
+
+.logo__img {
+  width: 149px;
+  height: 38px;
+
+  @media (max-width: $mobile-width-only) {
+    max-width: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 174px;
+    height: auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 202px;
   }
 }

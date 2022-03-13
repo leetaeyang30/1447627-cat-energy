@@ -1,0 +1,11 @@
+.page-main__hero {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 102px;
+  }
+}
