@@ -139,6 +139,20 @@
   transition-property: left;
   cursor: grab;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    bottom: -12px;
+    left: -10px;
+
+    @media (min-width: $tablet-width) {
+      right: -15px;
+      left: -15px;
+    }
+  }
+
   &:active {
     cursor: grabbing;
   }
