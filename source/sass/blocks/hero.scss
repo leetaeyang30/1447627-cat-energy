@@ -1,5 +1,7 @@
 .hero {
   position: relative;
+  padding-top: 27px;
+  text-align: center;
   color: $background-primary-color;
 
   &::before {
@@ -11,23 +13,160 @@
     z-index: -1;
     height: 302px;
     background-color: $special-color;
-    background-image: url("../img/hero-background-cat.jpg");
+    background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/hero-background-cat.jpg");
     background-repeat: no-repeat;
-    background-position: center bottom;
-    box-shadow: inset 0 0 0 10000px fade-out($special-color, 0.15);
+    background-size: cover;
+    background-position: center;
+
+    @media (min-resolution: 2dppx) {
+      background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/hero-background-cat@2x.jpg");
+    }
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      left: 50%;
+      display: block;
+      height: 694px;
+      background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/hero-background-cat-desktop.jpg");
+
+      @media (min-resolution: 2dppx) {
+        background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/hero-background-cat-desktop@2x.jpg");
+      }
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding-top: 43px;
+  }
+
+  @media (min-width: $desktop-width) {
+    position: static;
+    min-height: 533px;
+    padding-top: 8px;
+  }
+}
+
+.hero__container {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+      "row-1"
+      "row-2";
+    align-items: start;
+    justify-items: start;
+    text-align: start;
+    color: $text-accent-color;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-rows: 1.22fr min-content min-content 2fr;
+    grid-template-columns: 80px 480px 1fr;
+    grid-template-areas:
+      ". .    img"
+      ". desc img"
+      ". btn  img"
+      ". .    img";
+  }
+}
+
+.hero__description {
+  margin-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: desc;
+    margin-bottom: 47px;
   }
 }
 
 .hero__title {
-  text-align: center;
+  margin-top: 0;
+  margin-bottom: 20px;
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 36px;
   line-height: 36px;
   font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 87px 36px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 35px;
+  }
 }
 
 .hero__slogan {
-  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 0;
+  margin-bottom: 17px;
   font-family: "Oswald", "Arial", sans-serif;
   text-transform: uppercase;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin: 0 89px 23px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 23px;
+  }
+}
+
+.hero__link {
+  @media (min-width: $tablet-width) {
+    grid-area: row-2;
+    margin-top: 29px;
+    margin-left: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: btn;
+    margin: 0;
+  }
+}
+
+.hero__image-wrapper {
+  @media (min-width: $tablet-width) {
+    grid-area: row-2;
+    justify-self: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: img;
+    justify-self: start;
+  }
+}
+
+.hero__image {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 3px;
+
+  @media (min-width: $tablet-width) {
+    grid-area: row-2;
+    justify-self: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-area: img;
+    justify-self: start;
+    transform: translateX(-112px);
+  }
 }

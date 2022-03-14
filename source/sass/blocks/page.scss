@@ -1,4 +1,5 @@
 .page__body {
+  position: relative;
   display: grid;
   min-width: 320px;
   min-height: 100vh;
@@ -9,6 +10,23 @@
   line-height: 18px;
   color: $text-color;
   background-color: $background-primary-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.page--index .page__header {
+  @media (min-width: $desktop-width) {
+    color: $background-primary-color;
+  }
+}
+
+.page--index .page__navigation-link::after {
+  @media (min-width: $desktop-width) {
+    background-color: currentColor;
+  }
 }
 
 .page__title {
@@ -17,4 +35,14 @@
   line-height: 36px;
   font-weight: 400;
   color: $text-accent-color;
+}
+
+.page__navigation {
+  @media (min-width: $tablet-width) {
+    margin-top: 7px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 10px;
+  }
 }

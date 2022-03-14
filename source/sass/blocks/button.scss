@@ -1,6 +1,6 @@
 .button {
-  display: inline-block;
-  padding: 7px;
+  display: block;
+  padding: 12px 10px 10px;
   border: none;
   text-align: center;
   font-family: "Oswald", "Arial", sans-serif;
@@ -32,5 +32,11 @@
       color: fade-out($text-color, 0.7);
       background-color: darken($background-secondary-color, 3.5%);
     }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 18px 26px 16px;
+    font-size: 20px;
+    line-height: 20px;
   }
 }

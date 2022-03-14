@@ -1,22 +1,91 @@
 .example {
+  padding-top: 25px;
+  padding-bottom: 35px;
   background-color: $background-secondary-color;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 51px;
+    background-color: transparent;
+    background-image: linear-gradient(to top, $background-secondary-color 43.2%, transparent 43.2%);
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 17px;
+    padding-bottom: 13px;
+    background-image: linear-gradient(to bottom, transparent 29.8%, $background-secondary-color 29.8%);
+  }
+}
+
+.example__container {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 36% 1fr;
+  }
+}
+
+.example__wrapper {
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 57px;
+  }
 }
 
 .example__title {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 36px;
   line-height: 40px;
   font-weight: 400;
   color: $text-accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 59px;
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 38px;
+    margin-bottom: 142px;
+  }
+}
+
+.example__text {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    &:last-of-type {
+      margin-bottom: 53px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    &:last-of-type {
+      margin-bottom: 68px;
+    }
+  }
 }
 
 .example__list {
+  display: flex;
   margin: 0;
-  font-family: "Oswald", "Arial", sans-serif;
-  font-size: 14px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: $text-accent-color;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 32px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 29px;
+    gap: 10px 42px;
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: start;
+    gap: 20px 42px;
+  }
 }
 
 .example__key {
@@ -24,32 +93,179 @@
 }
 
 .example__value {
-  display: inline-block;
+  box-sizing: border-box;
   margin: 0;
-}
 
-.example__item--accent {
-  display: inline-flex;
-  flex-direction: column-reverse;
-  align-items: center;
-
-  .example__key {
-    width: 70%;
-    text-align: center;
-    font-family: "Arial", sans-serif;
-    font-size: 12px;
-    line-height: 12px;
-    text-transform: lowercase;
-    color: $text-color;
-    background-color: $background-secondary-color;
-    transform: translateY(-10px);
+  @media (min-width: $tablet-width) {
+    display: block;
   }
 
-  .example__value {
-    border: 1px solid $field-border-hover-color;
-    padding: 14px 21px 18px;
-    border-radius: 3px;
-    font-size: 24px;
-    line-height: 24px;
+  @media (min-width: $desktop-width) {
+    display: inline-block;
+  }
+}
+
+.example__item {
+  width: calc((100% - 32px) / 2); // 32px – column-gap
+  flex-shrink: 0;
+
+  @media (min-width: $tablet-width) {
+    width: calc((100% - 42px - 42px) / 3);
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 36.9%;
+  }
+
+  &--base {
+    flex-grow: 1;
+    text-align: right;
+    font-family: "Oswald", "Arial", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
+    color: $text-accent-color;
+
+    @media (max-width: $mobile-width-only) {
+      &:nth-child(odd) {
+        text-align: center;
+
+        .example__value {
+          display: inline-block;
+        }
+      }
+    }
+
+    @media (min-width: $tablet-width) {
+      margin-top: 8px;
+      font-size: 20px;
+      line-height: 29px;
+
+      @media (max-width: $mobile-and-tablet-width-only) {
+        &:nth-child(4n) {
+          text-align: center;
+
+          .example__value {
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $desktop-width) {
+      text-align: left;
+
+      &:nth-child(odd) .example__value {
+        margin-left: 59px;
+      }
+    }
+  }
+
+  &--accent {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    .example__key {
+      box-sizing: border-box;
+      max-width: 70%;
+      min-height: 2em;
+      padding: 0 5px;
+      font-size: 12px;
+      line-height: 12px;
+      text-transform: lowercase;
+      background-color: $background-secondary-color;
+      transform: translateY(-0.8em);
+
+      @media (min-width: $tablet-width) {
+        max-width: 90%;
+        padding: 0 8px;
+        font-size: 14px;
+        line-height: 14px;
+        background-color: $background-primary-color;
+        transform: translateY(-0.6em);
+
+        @media (max-width: $mobile-and-tablet-width-only) {
+          &:nth-last-child(-n + 3):first-child,
+          &:nth-last-child(-n + 3):first-child ~ .example__item--accent {
+            width: 22.9%;
+          }
+        }
+      }
+
+      @media (min-width: $desktop-width) {
+        background-color: $background-secondary-color;
+      }
+    }
+
+    .example__value {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      border: 1px solid $field-border-hover-color;
+      padding: 13px 10px 17px;
+      border-radius: 3px;
+      font-family: "Oswald", "Arial", sans-serif;
+      font-size: 24px;
+      line-height: 24px;
+      text-transform: uppercase;
+      color: $text-accent-color;
+
+      @media (min-width: $tablet-width) {
+        padding: 15px 15px 18px;
+        font-size: 30px;
+        line-height: 37px;
+      }
+    }
+  }
+}
+
+// .example__item--base {
+//   @media (max-width: $mobile-width-only) {
+//     &:nth-child(odd) {
+//       text-align: center;
+
+//       .example__value {
+//         display: inline-block;
+//       }
+//     }
+//   }
+
+//   @media (min-width: $tablet-width) and (max-width: $mobile-and-tablet-width-only) {
+//     &:nth-child(4n) {
+//       text-align: center;
+
+//       .example__value {
+//         display: inline-block;
+//       }
+//     }
+//   }
+// }
+
+// .example__item--accent {
+//   @media (min-width: $tablet-width) and (max-width: $mobile-and-tablet-width-only) {
+//     &:nth-last-child(-n + 3):first-child,
+//     &:nth-last-child(-n + 3):first-child ~ .example__item--accent {
+//       width: 22.9%;
+//     }
+//   }
+// }
+
+.example__separator {
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    width: 83.7%;
+    max-width: 592px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 75.7%;
+    margin: 0 0 0 auto;
   }
 }

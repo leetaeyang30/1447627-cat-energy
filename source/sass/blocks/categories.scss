@@ -1,5 +1,17 @@
 .categories__list {
+  display: grid;
   padding: 0;
   margin: 0;
   list-style: none;
+  row-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    row-gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 80px;
+  }
 }

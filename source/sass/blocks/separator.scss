@@ -1,0 +1,254 @@
+.separator {
+  width: 100%;
+}
+
+.separator__list {
+  display: flex;
+  padding: 0;
+  margin: 0 0 10px 0;
+  list-style: none;
+
+  &::after { /* Распорка */
+    content: "";
+    /* Вертикальные внутренние отступы рассчитываются от ширины блока
+    и поддерживает его высоту относительно ширины.
+    232/280 – отношение высоты к ширине используемых изображений, получается ~83%
+    Тогда размер каждого паддинга 83%/2
+    */
+    padding: calc(232 / 280 / 2 * 100%) 0;
+
+    @media (min-width: $tablet-width) {
+      padding: calc(511 / 592 / 2 * 100%) 0;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 18px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 21px;
+  }
+}
+
+.separator__img {
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.separator__item {
+  transition-property: width;
+
+  &--before {
+    width: 50%; // Ширина первого изображения.
+
+    .separator__img {
+      object-position: left;
+    }
+  }
+
+  &--after {
+    width: 0;
+    flex-grow: 1;
+
+    .separator__img {
+      object-position: right;
+    }
+  }
+}
+
+.separator__controls {
+  display: flex;
+  width: 79%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    width: 98.2%;
+  }
+}
+
+.separator__transition-wrapper {
+  flex-grow: 1;
+  display: grid;
+  height: 14px;
+  grid-template-columns: 24px 1fr 24px;
+  border-radius: 6px;
+  background-color: $background-primary-color;
+
+  &::before {
+    content: "";
+    border: 1px solid $field-border-hover-color;
+    border-right: none;
+    border-top-left-radius: inherit;
+    border-bottom-left-radius: inherit;
+
+    @media (min-width: $tablet-width) {
+      border: none;
+    }
+  }
+
+  &::after {
+    content: "";
+    border: 1px solid $field-border-hover-color;
+    border-left: none;
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+
+    @media (min-width: $tablet-width) {
+      border: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    height: 6px;
+    margin-top: 3px;
+    grid-template-columns: 17px 1fr 17px;
+    background-color: $separator-scale-color;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+}
+
+.separator__transition-scale {
+  position: relative;
+  border-top: 1px solid $field-border-hover-color;
+  border-bottom: 1px solid $field-border-hover-color;
+
+  @media (min-width: $tablet-width) {
+    border: none;
+  }
+}
+
+.separator__transition-button {
+  position: absolute;
+  top: 3px;
+  left: 50%; /* Положение ползунка */
+  width: 36px;
+  height: 6px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background-color: $special-color;
+  transform: translateX(-50%);
+  transition-property: left;
+  cursor: grab;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: -10px;
+    bottom: -12px;
+    left: -10px;
+
+    @media (min-width: $tablet-width) {
+      right: -15px;
+      left: -15px;
+    }
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  @media (min-width: $tablet-width) {
+    top: -14px;
+    display: flex;
+    width: 34px;
+    height: 34px;
+    border: 1px solid $field-border-hover-color;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-primary-color;
+    filter: drop-shadow(0 1px 3px fade-out($text-accent-color, 0.84));
+
+    &::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: inherit;
+      background-color: $special-color;
+    }
+
+    &:hover {
+      filter: drop-shadow(0 2px 4px fade-out($text-accent-color, 0.81));
+    }
+
+    &:active {
+      border-color: $special-color;
+      filter: drop-shadow(0 3px 5px fade-out($text-accent-color, 0.8));
+    }
+  }
+}
+
+.separator__button-label {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-image: repeating-linear-gradient(to right, $text-accent-color 0, $text-accent-color 1px, transparent 1px, transparent 2px);
+    opacity: 0.24;
+  }
+}
+
+.separator__button {
+  position: relative;
+  flex-shrink: 0;
+  min-width: 60px;
+  padding: 10px 0;
+  border: none;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $text-accent-color;
+  background-color: transparent;
+  cursor: pointer;
+
+  &--before {
+    margin-right: 8px;
+
+    @media (min-width: $tablet-width) {
+      margin-right: 18px;
+    }
+  }
+
+  &--after {
+    order: 3;
+    margin-left: 8px;
+
+    @media (min-width: $tablet-width) {
+      margin-left: 18px;
+    }
+  }
+
+  &:hover {
+    .separator__button-label::after {
+      background-color: $text-accent-color;
+      opacity: 0.4;
+    }
+  }
+
+  &:active {
+    .separator__button-label::after {
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

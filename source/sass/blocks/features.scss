@@ -1,18 +1,77 @@
+.features {
+  padding-top: 20px;
+  padding-bottom: 49px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 40px;
+    padding-bottom: 13px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 67px;
+    padding-bottom: 15px;
+  }
+}
+
 .features__title {
+  margin-top: 0;
+  margin-bottom: 40px;
   font-family: "Oswald", "Arial", sans-serif;
   font-size: 36px;
   line-height: 40px;
   font-weight: 400;
   color: $text-accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 67px;
+    font-size: 60px;
+    line-height: 70px;
+  }
 }
 
 .features__list {
+  display: grid;
   padding: 0;
   margin: 0;
   list-style: none;
+  row-gap: 20px;
+  counter-reset: features;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 60px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: -$tablet-container-padding;
+      bottom: 0;
+      left: -$tablet-container-padding;
+      height: 1px;
+      background-color: $field-border-color;
+    }
+
+    @media (min-width: $desktop-width) {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+  }
 }
 
 .features__item {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  gap: 10px 20px;
+  counter-increment: features;
+
   &::before {
     content: "";
     display: block;
@@ -21,6 +80,55 @@
     background-color: $special-color;
     background-repeat: no-repeat;
     background-position: center;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 33px;
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    display: block;
+    width: 80%;
+    min-height: 287px;
+
+    &::after {
+      content: counter(features);
+      position: absolute;
+      z-index: -1;
+      top: -39px;
+      right: 14px;
+      font-family: "Oswald", "Arial", sans-serif;
+      font-size: 280px;
+      line-height: 280px;
+      color: $background-secondary-color;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    min-height: 234px;
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.features__text {
+  grid-column: 2 / 3;
+  margin-top: 0;
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -33,6 +141,7 @@
 .features__item--release-form {
   &::before {
     background-image: url("../img/powder.svg");
+    background-position: 50% 45%;
   }
 }
 

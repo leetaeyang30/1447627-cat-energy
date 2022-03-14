@@ -1,3 +1,16 @@
+// Viewports
+
+$mobile-width-only: 767px;
+$mobile-and-tablet-width-only: 1359px;
+
+$tablet-width: 768px;
+$desktop-width: 1360px;
+
+$mobile-container-padding: 20px; // container, page-footer
+$tablet-container-padding: 30px; // container, page-footer
+
+// Colors
+
 $background-primary-color: #ffffff;
 $background-secondary-color: #eeeeee;
 $text-color: #444444;
@@ -8,3 +21,4 @@ $field-border-color: #e7e7e7;
 $field-border-hover-color: #cdcdcd;
 $social-icon-color: #666666;
 $catalog-item-title-color: #222222;
+$separator-scale-color: #dcdcdc;

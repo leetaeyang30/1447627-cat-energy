@@ -1,35 +1,88 @@
-.socials__list {
+.socials {
   display: flex;
   padding: 0;
   margin: 0;
   list-style: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.socials__item {
+  margin-right: 34px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-right: 26px;
+  }
 }
 
 .socials__link {
+  position: relative;
   display: block;
-  width: 30px;
-  height: 30px;
-  background-color: $social-icon-color;
-  mask-repeat: no-repeat;
-  mask-position: center;
 
-  &--vk {
+  &::before { // Увеличивает область нажатия.
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    background-color: $social-icon-color;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+  }
+
+
+  &--vk::after {
+    width: 23px;
+    height: 13px;
     mask-image: url("../img/vk-icon.svg");
+
+    @media (min-width: $tablet-width) {
+      width: 32px;
+      height: 18px;
+    }
   }
 
-  &--instagram {
+  &--instagram::after {
+    width: 16px;
+    height: 16px;
     mask-image: url("../img/instagram-icon.svg");
+
+    @media (min-width: $tablet-width) {
+      width: 23px;
+      height: 23px;
+    }
   }
 
-  &--facebook {
+  &--facebook::after {
+    width: 24px;
+    height: 20px;
     mask-image: url("../img/facebook-icon.svg");
+
+    @media (min-width: $tablet-width) {
+      width: 21px;
+      height: 29px;
+    }
   }
 
-  &:hover {
+  &:hover::after {
     background-color: $special-color;
   }
 
-  &:active {
+  &:active::after {
     background-color: $special-color;
     opacity: 0.3;
   }
