@@ -40,6 +40,14 @@
   }
 }
 
+.page-footer__contacts-wrapper--darker {
+  background-color: $background-secondary-color;
+
+  @media (min-width: $desktop-width) {
+    background-color: $background-primary-color;
+  }
+}
+
 .page-footer__text {
   margin: 0;
   font-family: "Oswald", "Arial", sans-serif;
@@ -92,6 +100,7 @@
     height: 53px;
     background-image: url("../img/map-pin.png");
     background-repeat: no-repeat;
+    background-size: contain;
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/map-pin@2x.png");

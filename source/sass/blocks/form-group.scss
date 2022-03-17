@@ -1,0 +1,48 @@
+.form-group--framed {
+  @media (max-width: $mobile-width-only) {
+    position: relative;
+    padding-top: 23px;
+    padding-bottom: 6px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      right: -$mobile-container-padding;
+      left: -$mobile-container-padding;
+      height: 1px;
+      background-color: $field-border-hover-color;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 24px 28px 11px;
+    border: 1px solid $field-border-color;
+  }
+}
+
+.form-group__field {
+  margin-bottom: 13px;
+}
+
+.form-group__controls--checkboxes {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+    column-gap: 59px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 80px;
+  }
+}
