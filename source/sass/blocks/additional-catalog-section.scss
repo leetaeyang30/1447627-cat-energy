@@ -28,8 +28,27 @@
   text-decoration: none;
   color: $background-primary-color;
   background-color: $special-color;
-  background-image: url("../img/cat-case-small.jpg");
-  box-shadow: inset 0 0 0 10000px fade-out($special-color, 0.15);
+  background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case.jpg");
+
+  @media (min-width: 2dppx) {
+    background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case@2x.jpg");
+  }
+
+  @media (min-width: $tablet-width) {
+    background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-tablet.jpg");
+
+    @media (min-width: 2dppx) {
+      background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-desktop.jpg");
+
+    @media (min-width: 2dppx) {
+      background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-desktop@2x.jpg");
+    }
+  }
 
   &::before {
     content: "";
