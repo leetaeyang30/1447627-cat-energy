@@ -1,8 +1,15 @@
 .textarea {
+  box-sizing: border-box;
+  height: 150px;
   resize: none;
-  padding: 9px 12px 10px 15px;
+  padding: 8px 12px 10px 14px;
   font: inherit;
   text-transform: inherit;
   color: inherit;
   border: 1px solid $field-border-color;
+
+  @media (min-width: $tablet-width) {
+    height: 174px;
+    padding: 9px 18px 10px;
+  }
 }

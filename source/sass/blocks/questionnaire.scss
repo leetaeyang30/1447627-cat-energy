@@ -1,15 +1,55 @@
 .questionnaire {
+  padding-top: 28px;
+  padding-bottom: 32px;
   font-family: "Oswald", "Arial", sans-serif;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 35px;
+    padding-bottom: 54px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 46px;
+    padding-bottom: 65px;
+  }
 }
 
 .questionnaire__title {
+  margin-top: 0;
+  margin-bottom: 37px;
   font-size: 36px;
   line-height: 36px;
   font-weight: 400;
   color: $text-accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 47px;
+    font-size: 60px;
+    line-height: 75px;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 49px;
+  }
 }
 
 .questionnaire__text {
+  margin-top: 0;
+  margin-bottom: 15px;
   text-transform: uppercase;
   color: $text-accent-color;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.questionnaire__form {
+  margin-top: 39px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 66px;
+  }
 }
