@@ -1,7 +1,16 @@
 .input {
-  padding: 11px 20px;
+  padding: 13px 15px 12px;
   font: inherit;
   text-transform: inherit;
   color: inherit;
   border: 1px solid $field-border-color;
+
+  @media (min-width: $tablet-width) {
+    padding: 9px 18px 11px;
+  }
+}
+
+.input:focus {
+  outline: 2px solid $text-color;
+  outline-offset: -1px;
 }

@@ -1,7 +1,8 @@
 .checkbox__label {
   display: grid;
-  grid-template-columns: 30px 1fr;
   grid-template-rows: 30px;
+  grid-template-columns: 30px 1fr;
+  column-gap: 16px;
   grid-template-areas: "checkbox label";
   align-items: center;
 
@@ -10,6 +11,12 @@
     grid-area: checkbox;
     place-self: stretch;
     border: 1px solid $field-border-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 40px;
+    grid-template-columns: 40px 1fr;
+    column-gap: 19px;
   }
 }
 
@@ -28,6 +35,13 @@
       width: 18px;
       height: 14px;
       background-image: url("../img/checked.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      @media (min-width: $tablet-width) {
+        width: 25px;
+        height: 20px;
+      }
     }
   }
 

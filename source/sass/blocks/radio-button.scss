@@ -1,7 +1,8 @@
 .radio-button__label {
   display: grid;
-  grid-template-columns: 30px 1fr;
   grid-template-rows: 30px;
+  grid-template-columns: 30px 1fr;
+  column-gap: 15px;
   grid-template-areas: "radio label";
   align-items: center;
 
@@ -11,6 +12,12 @@
     place-self: stretch;
     border: 1px solid $field-border-color;
     border-radius: 50%;
+  }
+
+  @media (min-width: $tablet-width) {
+    grid-template-rows: 40px;
+    grid-template-columns: 40px 1fr;
+    column-gap: 20px;
   }
 }
 
@@ -26,10 +33,15 @@
       content: "";
       grid-area: radio;
       place-self: center;
-      width: 13px;
-      height: 13px;
+      width: 48%;
+      height: 48%;
       border-radius: 50%;
       background-color: $special-color;
+
+      @media (min-width: $tablet-width) {
+        width: 45%;
+        height: 45%;
+      }
     }
   }
 
