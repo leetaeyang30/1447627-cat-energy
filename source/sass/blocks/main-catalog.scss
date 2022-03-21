@@ -143,6 +143,9 @@
 }
 
 .main-catalog__show-more-text {
+  padding: 0;
+  margin-bottom: 21px;
+  text-align: center;
   font-size: 12px;
   line-height: 16px;
 
@@ -216,12 +219,6 @@
   @media (min-width: $desktop-width) {
     width: 100%;
   }
-}
-
-.main-catalog__show-more-text {
-  padding: 0;
-  margin-bottom: 21px;
-  text-align: center;
 }
 
 .main-catalog__show-more-button-wrapper {
