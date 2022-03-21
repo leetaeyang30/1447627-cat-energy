@@ -1,0 +1,51 @@
+.section-title {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Oswald", "Aria", sans-serif;
+  font-size: 24px;
+  line-height: 26px;
+  font-weight: 400;
+  color: $text-accent-color;
+
+  &::first-line {
+    background-color: $background-primary-color;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 2px;
+    top: 0.67em;
+    right: -100vw;
+    left: 0;
+    background-color: $special-color;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 73px;
+    font-size: 36px;
+    line-height: 42px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0.67em;
+      right: calc(100% + 40px);
+      left: -100vw;
+      height: 2px;
+      background-color: $special-color;
+    }
+  }
+}
+
+.section-title__text {
+  padding-right: 20px;
+  box-decoration-break: clone;
+
+  @media (min-width: $tablet-width) {
+    padding-right: 40px;
+  }
+}

@@ -1,40 +1,54 @@
+.additional-catalog-section {
+  padding-bottom: 12px;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 245px;
+    column-gap: 80px;
+  }
+}
+
 .additional-catalog-section__title {
-  font-family: "Oswald", "Aria", sans-serif;
-  font-size: 24px;
-  line-height: 24px;
-  font-weight: 400;
-  color: $text-accent-color;
-}
+  margin-bottom: 30px;
 
-.additional-catalog__item-link {
-  font-family: "Oswald", "Aria", sans-serif;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 400;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: $catalog-item-title-color;
-}
+  @media (min-width: $tablet-width) {
+    width: 90%;
+    margin: 0 auto 77px;
+  }
 
-.additional-catalog__item-text {
-  font-size: 14px;
-  line-height: 14px;
+  @media (min-width: $desktop-width) {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
 }
 
 .additional-catalog-section__bonus {
-  display: block;
+  display: grid;
+  box-sizing: border-box;
+  min-height: 290px;
+  padding: 65px 48px 41px;
+  align-content: space-between;
+  justify-items: center;
+  text-align: center;
   font-size: 16px;
   line-height: 20px;
   text-decoration: none;
   color: $background-primary-color;
   background-color: $special-color;
   background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case.jpg");
+  background-size: cover;
+  background-position: center;
 
   @media (min-width: 2dppx) {
     background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case@2x.jpg");
   }
 
   @media (min-width: $tablet-width) {
+    min-height: 200px;
+    padding: 65px 100px 41px 89px;
+    grid-template-columns: 1fr 185px;
+    justify-items: start;
+    text-align: left;
     background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-tablet.jpg");
 
     @media (min-width: 2dppx) {
@@ -43,6 +57,11 @@
   }
 
   @media (min-width: $desktop-width) {
+    min-height: 20px;
+    padding: 63px 30px 46px;
+    grid-template-columns: auto;
+    justify-items: center;
+    text-align: center;
     background-image: linear-gradient(fade-out($special-color, 0.15), fade-out($special-color, 0.15)), url("../img/cat-case-desktop.jpg");
 
     @media (min-width: 2dppx) {
@@ -52,9 +71,20 @@
 
   &::before {
     content: "";
-    display: block;
     width: 58px;
     height: 62px;
     background-image: url("../img/gift.svg");
+  }
+}
+
+.additional-catalog-section__table {
+  margin-bottom: 33px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 67px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
   }
 }
