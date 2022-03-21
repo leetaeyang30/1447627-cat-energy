@@ -51,54 +51,7 @@
 }
 
 .questionnaire-form__section-title {
-  position: relative;
-  width: 100%;
-  padding: 0;
   margin-bottom: 34px;
-  font-size: 24px;
-  line-height: 26px;
-  color: $text-accent-color;
-
-  &::first-line {
-    background-color: $background-primary-color;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    height: 2px;
-    top: 0.67em;
-    right: calc(-1 * (100vw - 100%) / 2 + 200px);
-    left: 0;
-    background-color: $special-color;
-    box-shadow: 200px 0 0 0 $special-color;
-  }
-
-  @media (min-width: $tablet-width) {
-    margin-bottom: 73px;
-    font-size: 36px;
-    line-height: 42px;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0.67em;
-      left: calc(-1 * (100vw - 100%) / 2);
-      width: calc((100vw - 100%) / 2 - 40px);
-      height: 2px;
-      background-color: $special-color;
-    }
-  }
-}
-
-.questionnaire-form__section-title-text {
-  padding-right: 20px;
-  box-decoration-break: clone;
-
-  @media (min-width: $tablet-width) {
-    padding-right: 40px;
-  }
 }
 
 .questionnaire-form__field {
