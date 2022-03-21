@@ -1,3 +1,4 @@
+const page = document.querySelector(".page");
 const separator = document.querySelector(".separator");
 const itemBefore = separator.querySelector(".separator__item--before");
 const itemAfter = separator.querySelector(".separator__item--after");
@@ -12,7 +13,7 @@ transitionButton.addEventListener("mousedown", function() {
   isCaught = true;
 });
 
-transitionButton.addEventListener("mouseup",  function() {
+page.addEventListener("mouseup",  function() {
   isCaught = false;
 });
 
