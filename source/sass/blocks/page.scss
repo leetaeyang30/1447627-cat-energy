@@ -60,6 +60,8 @@
   }
 
   @media (min-width: $desktop-width) {
+    justify-self: end;
+    width: 610px;
     margin-top: 10px;
   }
 }

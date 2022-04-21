@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="preload" href="fonts/oswald-regular.woff2" as="font">
+    <link rel="preload" href="fonts/oswald-medium.woff2" as="font">
+    <link href="css/style.min.css" rel="stylesheet">
     <title>Cat Energy: Подбор программы</title>
     <link rel="icon" href="img/favicons/favicon.svg" type="img/svg+xml">
     <link rel="manifest" href="manifest.webmanifest">
@@ -20,7 +22,7 @@
             <img class="logo__img" src="img/logo.svg" width="149" height="38" alt="Нарисованный белый кот в красной маске.">
           </picture>
         </a>
-        <nav class="page__navigation main-navigation main-navigation--closed main-navigation--nojs">
+        <nav class="page__navigation main-navigation main-navigation--nojs">
           <button class="main-navigation__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
@@ -141,6 +143,10 @@
           </address>
         </div>
         <picture class="page-footer__location-img-wrapper">
+          <source type="image/webp" media="(min-width: 1360px)" srcset="img/location-desktop.webp 1x, img/location-desktop@2x.webp 2x">
+          <source type="image/webp" media="(min-width: 768px)" srcset="img/location-tablet.webp 1x, img/location-tablet@2x.webp 2x">
+          <source type="image/webp" srcset="img/location.webp 1x, img/location@2x.webp 2x">
+
           <source media="(min-width: 1360px)" srcset="img/location-desktop.png 1x, img/location-desktop@2x.png 2x">
           <source media="(min-width: 768px)" srcset="img/location-tablet.png 1x, img/location-tablet@2x.png 2x">
           <img class="page-footer__location-img" src="img/location.png" srcset="img/location@2x.png 2x" width="320" height="362" alt="Расположение магазина на карте по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19/8.">
@@ -175,6 +181,6 @@
         </a>
       </div>
     </footer>
-    <script src="js/main-navigation.js"></script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
