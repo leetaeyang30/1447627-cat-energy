@@ -48,7 +48,7 @@
   &--vk::after {
     width: 23px;
     height: 13px;
-    mask-image: url("../img/vk-icon.svg");
+    mask-image: url("../img/icons/vk-icon.svg");
 
     @media (min-width: $tablet-width) {
       width: 32px;
@@ -59,7 +59,7 @@
   &--instagram::after {
     width: 16px;
     height: 16px;
-    mask-image: url("../img/instagram-icon.svg");
+    mask-image: url("../img/icons/instagram-icon.svg");
 
     @media (min-width: $tablet-width) {
       width: 23px;
@@ -70,7 +70,7 @@
   &--facebook::after {
     width: 24px;
     height: 20px;
-    mask-image: url("../img/facebook-icon.svg");
+    mask-image: url("../img/icons/facebook-icon.svg");
 
     @media (min-width: $tablet-width) {
       width: 21px;
